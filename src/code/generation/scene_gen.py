@@ -1,2 +1,0 @@
-import blenderproc as bproc
-

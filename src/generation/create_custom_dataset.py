@@ -76,9 +76,9 @@ def create_sub_mask_annotation(sub_mask, image_id, category_id, annotation_id, i
 
 
 if __name__ == '__main__':
-    image_01 = Image.open('../../images_and_labels/images/2019-05-14_FeP_Huawei_01.jpg')
-    image_02 = Image.open('../../images_and_labels/images/2019-05-14_FeP_Huawei_02.jpg')
-    image_03 = Image.open('../../images_and_labels/images/2019-05-14_FeP_Huawei_03.jpg')
+    image_01 = Image.open('../../data/images_and_labels/images/2019-05-14_FeP_Huawei_01.jpg')
+    image_02 = Image.open('../../data/images_and_labels/images/2019-05-14_FeP_Huawei_02.jpg')
+    image_03 = Image.open('../../data/images_and_labels/images/2019-05-14_FeP_Huawei_03.jpg')
 
     mask_images = [image_01, image_02, image_03]
 

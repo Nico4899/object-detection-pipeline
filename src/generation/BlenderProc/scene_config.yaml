@@ -1,0 +1,47 @@
+version: 2
+
+modules:
+  - name: "loader.ObjectLoader"
+    config:
+      path: "data/base_data"
+      file_format: "fbx"
+      load_subdir: True
+
+  - name: "material.MaterialLoader"
+    config:
+      hdri_lighting:
+        hdri_folder: "data/hdri"
+      materials:
+        - name: "my_material"
+          texture_path: "data/textures/my_texture.png"
+
+  - name: "camera.CameraSampler"
+    config:
+      location:
+        provider: "sampler.Uniform3d"
+        min: [-5, -5, 0]
+        max: [5, 5, 10]
+      rotation:
+        format: "look_at"
+        value: [0, 0, 0]
+      intrinsics: "blender_intrinsic"
+
+  - name: "lighting.LightLoader"
+    config:
+      lights:
+        - type: "POINT"
+          location: [0, 0, 10]
+          energy: 1000
+        - type: "SUN"
+          location: [5, 5, 5]
+          energy: 500
+          color: [1, 1, 0.8]
+
+  - name: "renderer.RgbRenderer"
+    config:
+      output_dir: "output/renderings"
+      samples: 256
+
+  - name: "writer.BasicWriter"
+    config:
+      output_dir: "output/renderings"

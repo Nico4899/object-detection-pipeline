@@ -3,4 +3,4 @@ venv/
 data/data_pu_cropped
 model/mask_rcnn_inception_resnet_v2_checkpoint
 model/mask_rcnn
-src/images_and_labels
+data/images_and_labels
