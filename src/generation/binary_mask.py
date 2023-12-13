@@ -1,8 +1,6 @@
-import os
 import json
 import numpy as np
 
-from tqdm import tqdm
 from PIL import Image
 from blenderproc.python.writer import CocoWriterUtility
 
@@ -24,3 +22,5 @@ for annotation in annotations:
     # Convert the grayscale image to RGB
     mask_image_rgb = mask_image_gray.convert("RGB")
     mask_image_rgb.save(data_path + f"/mask/{image_id}.png")
+
+
