@@ -1,5 +1,6 @@
 venv/
 .idea/
 data/data_pu_cropped
-data/mask_rcnn_inception_resnet_v2_checkpoint
-data/model
+model/mask_rcnn_inception_resnet_v2_checkpoint
+model/mask_rcnn
+data/images_and_labels

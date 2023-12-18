@@ -1,0 +1,50 @@
+# klt_config_sampled.yaml
+scene_setup:
+  resolution:
+    x: 1920
+    y: 1080
+  render_engine: 'CYCLES'
+  world_background:
+    color: [0.8, 0.8, 0.8, 1]
+
+object_placement:
+  package_units:
+    - 'data/base_data/klt_642.fbx'
+    - 'data/base_data/klt_643.fbx'
+    - 'data/base_data/klt_4315.fbx'
+    - 'data/base_data/klt_6414.fbx'
+  randomize_positions: true
+  randomize_rotations: true
+  position_range: [-5, 5, 0, 5]
+  rotation_range: [0, 3.14]
+
+camera_settings:
+  camera_types: ['PERSP', 'ORTHO']
+  focal_length: 35
+  num_samples: 10
+  randomize_positions: true
+  position_range: [-10, 10, 5, 15]
+  randomize_rotations: true
+  rotation_range: [0, 3.14]
+
+lighting_setup:
+  num_lights: 5
+  light_types: ['POINT', 'SUN', 'SPOT', 'AREA']
+  randomize_energy: true
+  energy_range: [100, 2000]
+  randomize_color: true
+  randomize_position: true
+  position_range: [-20, 20, 1, 20]
+
+object_visibility:
+  hide_modules:
+    - 'HideInstantModule.py'
+  unhide_modules:
+    - 'UnhideInstantModule.py'
+
+rendering:
+  batch_size: 10
+  output_directory: '../../output/'
+
+label_generation:
+  output_directory: '../../output/labels'
