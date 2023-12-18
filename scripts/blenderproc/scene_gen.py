@@ -6,10 +6,13 @@ import mathutils
 from KLTCameraSampler import sample_cameras
 from KLTImageWriter import main as render_main
 from KLTLabelWriter import main as label_writer_main
+from LightSamplerNum import sample_lights
+# from HideInstantModule import hide_objects
+# from UnhideInstantModule import unhide_objects
 
 
-output_dir = "../../output"
-input_dir = "../../data/base_data"
+output_dir = "../../output/"
+input_dir = "../../data/base_data/"
 input_data = ["klt_642.fbx", "klt_643.fbx", "klt_4315.fbx", "klt_6414.fbx"]
 
 
@@ -113,8 +116,10 @@ def main():
     target_location = calculate_target_location()
     sample_cameras(10, target_location)
 
+    sample_lights(10)
+
     render_main(output_dir)
-    label_writer_main(output_dir)
+    label_writer_main(os.path.join(output_dir, "labels"))
 
 
 if __name__ == "__main__":
