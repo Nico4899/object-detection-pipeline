@@ -15,8 +15,15 @@ def convert_annotations_to_regions(annotations):
 
 def main():
     # Load annotations from JSON file
-    with open('../../data/images_and_labels/annotations/sample_annotations.json', 'r') as f:
-        annotations_data = json.load(f)
+    try:
+        with open('../../data/images_and_labels/annotations/sample_annotations.json', 'r') as f:
+            annotations_data = json.load(f)
+    except FileNotFoundError:
+        print("Annotation file not found.")
+        return
+    except json.JSONDecodeError:
+        print("Error decoding JSON.")
+        return
 
     # Paths
     label_map_path = '../../data/data_pu_cropped/label_map.pbtxt'
