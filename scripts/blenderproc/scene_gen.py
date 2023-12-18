@@ -5,6 +5,13 @@ import mathutils
 
 from KLTCameraSampler import sample_cameras
 from KLTImageWriter import main as render_main
+from KLTLabelWriter import main as label_writer_main
+
+
+output_dir = "../../output"
+input_dir = "../../data/base_data"
+input_data = ["klt_642.fbx", "klt_643.fbx", "klt_4315.fbx", "klt_6414.fbx"]
+
 
 def initialize_scene():
     # Clear existing objects
@@ -94,13 +101,11 @@ def main():
     initialize_scene()
 
     # Update the path to where the FBX files are stored
-    data_path = os.path.join(os.path.dirname(__file__), '../../data/base_data')
+    data_path = os.path.join(os.path.dirname(__file__), input_dir)
 
     # Load each package unit as an FBX file
-    load_package_units(os.path.join(data_path, 'klt_642.fbx'))
-    load_package_units(os.path.join(data_path, 'klt_643.fbx'))
-    load_package_units(os.path.join(data_path, 'klt_4315.fbx'))
-    load_package_units(os.path.join(data_path, 'klt_6414.fbx'))
+    for klt_unit in input_data:
+        load_package_units(os.path.join(data_path, klt_unit))
 
     # Apply randomization
     randomize_units()
@@ -108,7 +113,8 @@ def main():
     target_location = calculate_target_location()
     sample_cameras(10, target_location)
 
-    render_main("../../output")
+    render_main(output_dir)
+    label_writer_main(output_dir)
 
 
 if __name__ == "__main__":
