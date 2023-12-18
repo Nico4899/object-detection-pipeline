@@ -27,7 +27,7 @@ Provide a brief, clear description of your project. Explain what it does, the pr
 Clone the repository and install the required dependencies:
 
 ```bash
-git clone https://yourproject/repository.git
+git clone https://lsogit.fzi.de/doerr/hiwi_fliegel.git
 cd yourproject
 pip install -r requirements.txt
 ```
