@@ -1,9 +1,5 @@
 # Object Detection of Packaging Units
 
-## Description
-
-Provide a brief, clear description of your project. Explain what it does, the problem it solves, or the value it adds to its users.
-
 ## Table of Contents
 
 - [Installation](#installation)
