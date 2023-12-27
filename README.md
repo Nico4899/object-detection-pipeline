@@ -23,7 +23,7 @@
 Clone the repository and install the required dependencies:
 
 ```bash
-git clone https://lsogit.fzi.de/doerr/hiwi_fliegel.git
+git clone https://github.com/Nico4899/object-detection-pipeline.git
 cd yourproject
 pip install -r requirements.txt
 ```
